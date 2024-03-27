@@ -1,4 +1,3 @@
-from arithmetic import Binary
 from visualization import visualization
 
 input1 = int(input("Введите первое число: "))

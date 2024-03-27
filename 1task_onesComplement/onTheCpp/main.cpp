@@ -1,23 +1,20 @@
-#include <iostream>
-#include "arithmetic.h"
+
 #include "visualization.cpp"
 
 int main() {
-  int input1, input2;
+    int num1_dec, num2_dec;
+    std::cout << "Введите первое число (в десятичной системе счисления): ";
+    std::cin >> num1_dec;
 
-  // Ввод чисел
-  std::cout << "Введите первое число: ";
-  std::cin >> input1;
-  std::cout << "Введите второе число: ";
-  std::cin >> input2;
+    std::cout << "Введите второе число (в десятичной системе счисления): ";
+    std::cin >> num2_dec;
 
-  // Визуализация
-  visualization(input1, input2);
+    visualization(num1_dec, num2_dec);
+    
+    // Пару тестиков
+    visualization(6, 8);
+    visualization(0, -10);
+    visualization(-14, -7);
 
-  // Тестовые вызовы
-  visualization(6, 8);
-  visualization(0, -10);
-  visualization(-14, -7);
-
-  return 0;
+    return 0;
 }
