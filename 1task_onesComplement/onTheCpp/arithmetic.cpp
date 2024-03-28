@@ -2,25 +2,25 @@
 #include <bitset>
 
 // Класс для работы с двоичными числами
+template<size_t length>
 class BinaryNumber {
 private:
-    std::bitset<8> value;
-
+    std::bitset<length> value;
 public:
     // Конструкторы
-    std::bitset<8> getValue() const {
+    std::bitset<length> getValue() const {
         return value;
     }
     BinaryNumber() : value(0) {} // Конструктор по умолчанию инициализирует значение нулем
     // Конструктор инициализации значения переданным целым числом
     BinaryNumber(int num) {
         if (num < 0) {
-            value = std::bitset<8>(-num).flip(); // Преобразуем отрицательное число в положительное и получаем обратный код
+            value = std::bitset<length>(-num).flip(); // Преобразуем отрицательное число в положительное и получаем обратный код
         } else {
-            value = std::bitset<8>(num);
+            value = std::bitset<length>(num);
         }
     } 
-    BinaryNumber(std::bitset<8> num) : value(num) {} // Конструктор инициализации значения переданным двоичным числом
+    BinaryNumber(std::bitset<length> num) : value(num) {} // Конструктор инициализации значения переданным двоичным числом
 
     // Метод для преобразования двоичного числа в десятичное
     int toDecimal() const {
@@ -35,8 +35,8 @@ public:
         }
 
         int decimalValue = 0;
-        for (int i = 0; i < 8; i++) {
-            decimalValue += (binary[7 - i] - '0') * (1 << i); // Преобразуем двоичное число в десятичное
+        for (int i = 0; i < length; i++) {
+            decimalValue += (binary[length - 1 - i] - '0') * (1 << i); // Преобразуем двоичное число в десятичное
         }
 
         if (isNegative) {
@@ -48,11 +48,11 @@ public:
 
     // Перегрузка операторов
     BinaryNumber operator+(const BinaryNumber& other) {
-        std::bitset<8> result = value ^ other.value;
-        std::bitset<8> carry = (value & other.value) << 1;
+        std::bitset<length> result = value ^ other.value;
+        std::bitset<length> carry = (value & other.value) << 1;
 
         while (carry != 0) {
-            std::bitset<8> temp = result;
+            std::bitset<length> temp = result;
             result = result ^ carry;
             carry = (temp & carry) << 1;
         }
@@ -60,12 +60,12 @@ public:
     }
 
     BinaryNumber operator-(const BinaryNumber& other) {
-        std::bitset<8> invertedOther = ~other.value;
-        std::bitset<8> result = value ^ invertedOther;
-        std::bitset<8> carry = (value & invertedOther) << 1;
+        std::bitset<length> invertedOther = ~other.value;
+        std::bitset<length> result = value ^ invertedOther;
+        std::bitset<length> carry = (value & invertedOther) << 1;
 
         while (carry != 0) {
-            std::bitset<8> temp = result;
+            std::bitset<length> temp = result;
             result = result ^ carry;
             carry = (temp & carry) << 1;
         }
