@@ -7,10 +7,11 @@ class BinaryNumber {
 private:
     std::bitset<length> value;
 public:
-    // Конструкторы
+    // Геттер
     std::bitset<length> getValue() const {
         return value;
     }
+    // Конструкторы
     BinaryNumber() : value(0) {} // Конструктор по умолчанию инициализирует значение нулем
     // Конструктор инициализации значения переданным целым числом
     BinaryNumber(int num) {
