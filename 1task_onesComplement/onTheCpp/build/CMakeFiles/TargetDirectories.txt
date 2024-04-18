@@ -1,0 +1,3 @@
+/Users/admin/Desktop/work/petProjects/С++/algorithmsAndDataStructures/1task_onesComplement/onTheCpp/build/CMakeFiles/main.dir
+/Users/admin/Desktop/work/petProjects/С++/algorithmsAndDataStructures/1task_onesComplement/onTheCpp/build/CMakeFiles/edit_cache.dir
+/Users/admin/Desktop/work/petProjects/С++/algorithmsAndDataStructures/1task_onesComplement/onTheCpp/build/CMakeFiles/rebuild_cache.dir

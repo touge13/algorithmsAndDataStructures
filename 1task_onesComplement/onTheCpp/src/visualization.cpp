@@ -1,4 +1,5 @@
-#include "arithmetic.cpp"
+#include "../include/visualization.h"
+#include "../include/arithmetic.h"
 
 void visualization(int num1_dec, int num2_dec) {
     std::cout << "------------------------------------------test {" << num1_dec << ", " << num2_dec << "}------------------------------------------------------" << std::endl;
@@ -7,8 +8,8 @@ void visualization(int num1_dec, int num2_dec) {
     BinaryNumber<length> num1(num1_dec);
     BinaryNumber<length> num2(num2_dec);
 
-    std::bitset<8> binary_num1 = num1.getValue();
-    std::bitset<8> binary_num2 = num2.getValue();
+    std::bitset<length> binary_num1 = num1.getValue();
+    std::bitset<length> binary_num2 = num2.getValue();
 
     std::cout << "Первое число в двоичном коде: " << binary_num1 << std::endl;
     std::cout << "Второе число в двоичном коде: " << binary_num2 << std::endl;

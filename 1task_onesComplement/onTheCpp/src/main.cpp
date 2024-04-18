@@ -1,5 +1,5 @@
-
-#include "visualization.cpp"
+#include <iostream>
+#include "../include/visualization.h"
 
 int main() {
     int num1_dec, num2_dec;
