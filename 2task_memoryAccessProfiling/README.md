@@ -32,6 +32,11 @@ Completed by: `Grudinin Mikhail Artemovich (Грудинин Михаил Арт
 Различия в шаблонах доступа к памяти между вычислениями суммы по строкам и по столбцам могут привести к изменениям в использовании кэша и эффективности доступа к памяти. Профилирование этих операций помогает выявить потенциальные узкие места производительности и оптимизировать шаблоны доступа к памяти для улучшения общей производительности программы.
 
 ## Что мы получили в итоге? 
+columnSums:
+![Image alt](https://github.com/touge13/algorithmsAndDataStructures/raw/main//2task_memoryAccessProfiling/result/ColumnSums.png)
+
+rowSums:
+![Image alt](https://github.com/touge13/algorithmsAndDataStructures/raw/main//2task_memoryAccessProfiling/result/RowSums.png)
 
 Мы видим, что реализация сложения по строкам работает значительно лучше, чем реализация сложения по столбцам. В первую очередь это связано с разницей в поведении кэша между двумя реализациями. 
 
