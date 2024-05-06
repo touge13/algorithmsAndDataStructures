@@ -77,7 +77,7 @@ void calculate_with_threads(int num_threads, int num_points_per_thread) {
                             (num_threads * num_points_per_thread * epsilon * epsilon * D_V * D_V));
 
     // Вывод результатов
-    std::cout << "Left-hand side of the inequality" << probability << std::endl;
+    std::cout << "Left-hand side of the inequality: " << probability << std::endl;
     std::cout << "Right-hand side of the inequality: " << right_hand_side << std::endl;
     // Проверяем выполнение неравенства
     if (probability <= right_hand_side) {

@@ -12,19 +12,19 @@
 
 ## Результаты
 ```
-admin@MacBook-ProMisa 4task_MonteCarlo % g++ -o main main.cpp -pthread -std=c++11
-./main 1  
+admin@MacBook-ProMisa 4task_MonteCarlo %  g++ -o main main.cpp -pthread -std=c++17
+./main 1
 ```
 Left-hand side of the inequality: 1
 Right-hand side of the inequality: 1
-Execution time with 1 threads and 100000 points per thread: 0.028873 seconds
 The inequality is satisfied.
+Execution time with 1 threads and 100000 points per thread: 0.0281201 seconds
 
 ```
-admin@MacBook-ProMisa 4task_MonteCarlo % g++ -o main main.cpp -pthread -std=c++11
+admin@MacBook-ProMisa 4task_MonteCarlo %  g++ -o main main.cpp -pthread -std=c++17
 ./main 100
 ```
 Left-hand side of the inequality: 1
 Right-hand side of the inequality: 1
-Execution time with 100 threads and 1000 points per thread: 0.0135475 seconds
 The inequality is satisfied.
+Execution time with 100 threads and 1000 points per thread: 0.0131294 seconds
