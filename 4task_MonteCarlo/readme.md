@@ -13,14 +13,14 @@
 ## Результаты
 ```
 admin@MacBook-ProMisa 4task_MonteCarlo %  g++ -o main main.cpp -pthread -std=c++17
-./main 1
+./main 2
 ```
 ```
-Integral estimate: 0.63413. (Истинное значение интеграла функции sin(pi * x) на [0, 1] равно 2/pi = 0.6366...)
+Integral estimate: 0.63638. (Истинное значение интеграла функции sin(pi * x) на [0, 1] равно 2/pi = 0.6366...)
 Left-hand side of the inequality: 1
 Right-hand side of the inequality: 1
 The inequality is satisfied.
-Execution time with 1 threads and 100000 points per thread: 0.0403317 seconds
+Execution time with 2 threads and 50000 points per thread: 0.0183125 seconds
 ```
 ```
 admin@MacBook-ProMisa 4task_MonteCarlo %  g++ -o main main.cpp -pthread -std=c++17
