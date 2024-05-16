@@ -52,7 +52,7 @@ void calculate_with_threads(int num_threads, int num_points_per_thread) {
 
             // Проверяем условие неравенства
             int K = static_cast<int>(integral_estimate * D_V); // K как количество точек под функцией
-            if (std::abs(integral_estimate / D_V - K / num_threads) >= epsilon) {
+            if (std::abs(integral_estimate / D_V - K / num_threads) >= epsilon) { // Делаем проверку как на слайде, для вычисления probability
                 satisfying_count.fetch_add(1, std::memory_order_relaxed);
             }
         });
@@ -77,6 +77,8 @@ void calculate_with_threads(int num_threads, int num_points_per_thread) {
                             (num_threads * num_points_per_thread * epsilon * epsilon * D_V * D_V));
 
     // Вывод результатов
+    std::cout << "Integral estimate: " << integral_estimate << ". (Истинное значение интеграла функции sin(pi * x) на [0, 1] равно 2/pi = 0.6366...)" << std::endl;
+
     std::cout << "Left-hand side of the inequality: " << probability << std::endl;
     std::cout << "Right-hand side of the inequality: " << right_hand_side << std::endl;
     // Проверяем выполнение неравенства
