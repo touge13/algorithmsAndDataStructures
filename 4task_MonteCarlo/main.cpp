@@ -47,11 +47,11 @@ void calculate_with_threads(int num_threads, int num_points_per_thread) {
     // Создание потоков для параллельных вычислений
     for (int i = 0; i < num_threads; ++i) {
         threads.emplace_back([num_points_per_thread, &satisfying_count, D_V, num_threads, epsilon]() {
-            // Выполняем вычисления в текущем потоке
+            // Выполняем вычисление интеграла в текущем потоке (полученное значение будет использовано только при подсчете satisfying_count)
             double integral_estimate = monte_carlo_integration(0.0, 1.0, num_points_per_thread);
 
             // Проверяем условие неравенства
-            int K = static_cast<int>(integral_estimate * D_V); // K как количество точек под функцией
+            double K = static_cast<double>(integral_estimate * D_V); // K как количество точек под функцией
             if (std::abs(integral_estimate / D_V - K / num_threads) >= epsilon) { // Делаем проверку как на слайде, для вычисления probability
                 satisfying_count.fetch_add(1, std::memory_order_relaxed);
             }
